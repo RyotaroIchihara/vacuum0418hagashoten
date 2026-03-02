@@ -149,7 +149,7 @@ select {
 }
 
 .brand {
-  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
   font-size: 0.95rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -595,7 +595,7 @@ h3 {
 
 h1,
 .display-title {
-  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
   font-weight: 700;
   letter-spacing: 0.03em;
   text-shadow: 0 0 18px rgba(182, 77, 255, 0.12);
@@ -781,6 +781,10 @@ main {
   margin: 0;
   color: var(--muted);
   line-height: 1.8;
+}
+
+.section-head .eyebrow {
+  margin-bottom: 14px;
 }
 
 .section-title {
