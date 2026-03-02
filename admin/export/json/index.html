@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSONエクスポート | 4.18バキューム体験会 in 芳賀書店</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page-shell">
+        <div class="topbar">
+          <div class="brand">admin export / json</div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-label="メニューを開く" data-menu-toggle>
+            <span class="menu-toggle-line" aria-hidden="true"></span>
+            <span class="menu-toggle-line" aria-hidden="true"></span>
+            <span class="menu-toggle-line" aria-hidden="true"></span>
+          </button>
+          <nav class="topnav" aria-label="主要ナビゲーション">
+            <a href="/admin/">管理者メニュー</a>
+            <a href="/admin/export/csv/">CSV</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="page-shell">
+          <div class="admin-panel" data-admin-view="json">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">JSON Export</p>
+                <h1 class="section-title display-title">予約一覧（JSON）</h1>
+              </div>
+              <p>予約件数: <strong data-admin-count>0</strong> 件</p>
+            </div>
+
+            <div class="admin-toolbar">
+              <button class="button" type="button" data-download>JSONをダウンロード</button>
+              <button class="button-secondary" type="button" data-clear>保存データを消去</button>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>名前</th>
+                    <th>メール</th>
+                    <th>予約枠</th>
+                    <th>体験希望</th>
+                    <th>作成日時</th>
+                    <th>ID</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+
+            <div class="card" style="margin-top: 20px">
+              <strong>JSONプレビュー</strong>
+              <p>ローカル保存データをそのまま出力しています。</p>
+              <pre data-export-output></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

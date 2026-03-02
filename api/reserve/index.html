@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API仕様メモ | 4.18バキューム体験会 in 芳賀書店</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page-shell">
+        <div class="topbar">
+          <div class="brand">api reserve</div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-label="メニューを開く" data-menu-toggle>
+            <span class="menu-toggle-line" aria-hidden="true"></span>
+            <span class="menu-toggle-line" aria-hidden="true"></span>
+            <span class="menu-toggle-line" aria-hidden="true"></span>
+          </button>
+          <nav class="topnav" aria-label="主要ナビゲーション">
+            <a href="/">トップへ戻る</a>
+            <a href="/reserve/">予約フォーム</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="page-shell">
+          <div class="content-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Implementation Note</p>
+                <h1 class="section-title display-title">`/api/reserve` について</h1>
+              </div>
+              <p>この静的プロトタイプでは、予約保存は `app.js` 内で `localStorage` に対して行っています。</p>
+            </div>
+            <div class="card">
+              <strong>本番置き換え想定</strong>
+              <ul class="note-list">
+                <li>Cloudflare Pages Functions または Supabase Edge Function で POST を受け付ける</li>
+                <li>`name`, `email`, `slot_time`, `experience` を受信する</li>
+                <li>予約数が3件に達した枠はエラー応答にする</li>
+                <li>管理用のCSV/JSONは認証付きエンドポイントで返す</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理者メニュー | 4.18バキューム体験会 in 芳賀書店</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page-shell">
+        <div class="topbar">
+          <div class="brand">admin menu</div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-label="メニューを開く" data-menu-toggle>
+            <span class="menu-toggle-line" aria-hidden="true"></span>
+            <span class="menu-toggle-line" aria-hidden="true"></span>
+            <span class="menu-toggle-line" aria-hidden="true"></span>
+          </button>
+          <nav class="topnav" aria-label="主要ナビゲーション">
+            <a href="/">トップへ戻る</a>
+            <a href="/admin/export/csv/">CSV</a>
+            <a href="/admin/export/json/">JSON</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="page-shell">
+          <div class="admin-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Admin Tools</p>
+                <h1 class="section-title display-title">管理者メニュー</h1>
+              </div>
+              <p>静的プロトタイプ用のローカル管理画面です。予約データはこのブラウザに保存された内容のみ対象です。</p>
+            </div>
+            <div class="grid-2">
+              <div class="card">
+                <strong>CSVエクスポート</strong>
+                <p>表形式で確認し、そのままCSVをダウンロードできます。</p>
+                <div class="stack-actions">
+                  <a class="button" href="/admin/export/csv/">CSV画面へ</a>
+                </div>
+              </div>
+              <div class="card">
+                <strong>JSONエクスポート</strong>
+                <p>保存済みデータをJSONで確認し、そのままダウンロードできます。</p>
+                <div class="stack-actions">
+                  <a class="button-secondary" href="/admin/export/json/">JSON画面へ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-shell">
+        <div class="footer-panel">
+          <span>本番運用時は `/admin` に認証とRLS付きAPIを接続してください。</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
