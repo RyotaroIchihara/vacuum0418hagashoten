@@ -348,20 +348,20 @@ select {
 .hero-banner-main {
   display: block;
   font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
-  font-size: clamp(1.45rem, 6.8vw, 5.8rem);
+  font-size: clamp(1.35rem, 5.2vw, 4.6rem);
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.02em;
+  line-height: 1.04;
+  letter-spacing: 0.01em;
   color: transparent;
   background: linear-gradient(90deg, #ffffff 0%, #dfbeff 45%, #74f8ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   filter: drop-shadow(0 0 20px rgba(182, 77, 255, 0.28));
-  white-space: nowrap;
-  word-break: keep-all;
-  overflow-wrap: normal;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 .hero-banner-sub {
@@ -421,7 +421,7 @@ select {
 .hero-status-panel {
   position: relative;
   justify-self: end;
-  width: min(100%, 320px);
+  width: min(100%, 280px);
   padding: 18px 18px 20px;
   border: 1px solid rgba(64, 242, 255, 0.18);
   border-radius: calc(var(--radius-md) + 2px);
