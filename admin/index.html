@@ -10,7 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../app.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -23,9 +24,9 @@
             <span class="menu-toggle-line" aria-hidden="true"></span>
           </button>
           <nav class="topnav" aria-label="主要ナビゲーション">
-            <a href="/">トップへ戻る</a>
-            <a href="/admin/export/csv/">CSV</a>
-            <a href="/admin/export/json/">JSON</a>
+            <a href="../">トップへ戻る</a>
+            <a href="./export/csv/">CSV</a>
+            <a href="./export/json/">JSON</a>
           </nav>
         </div>
       </div>
@@ -47,14 +48,14 @@
                 <strong>CSVエクスポート</strong>
                 <p>表形式で確認し、そのままCSVをダウンロードできます。</p>
                 <div class="stack-actions">
-                  <a class="button" href="/admin/export/csv/">CSV画面へ</a>
+                  <a class="button" href="./export/csv/">CSV画面へ</a>
                 </div>
               </div>
               <div class="card">
                 <strong>JSONエクスポート</strong>
                 <p>保存済みデータをJSONで確認し、そのままダウンロードできます。</p>
                 <div class="stack-actions">
-                  <a class="button-secondary" href="/admin/export/json/">JSON画面へ</a>
+                  <a class="button-secondary" href="./export/json/">JSON画面へ</a>
                 </div>
               </div>
             </div>

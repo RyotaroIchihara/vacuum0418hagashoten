@@ -159,7 +159,12 @@
       link.textContent = "満席";
       link.addEventListener("click", (event) => event.preventDefault());
     } else {
-      link.href = `/reserve/?slot=${stats.slotTime}`;
+      const isReservePage =
+        /\/reserve\/?$/.test(window.location.pathname) ||
+        /\/reserve\/index\.html$/.test(window.location.pathname);
+      link.href = isReservePage
+        ? `?slot=${stats.slotTime}`
+        : `./reserve/?slot=${stats.slotTime}`;
       link.textContent = "この枠を予約";
     }
     return link;
@@ -321,7 +326,7 @@
       reservations.push(entry);
       setReservations(reservations);
       setLastReservation(entry);
-      window.location.href = "/thanks/";
+      window.location.href = "../thanks/";
     });
   }
 
