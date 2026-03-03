@@ -13,6 +13,7 @@ CREATE TABLE public.reservations (
   id          UUID        DEFAULT gen_random_uuid() PRIMARY KEY,
   name        TEXT        NOT NULL,
   email       TEXT        NOT NULL,
+  x_account   TEXT,
   slot_time   INT         NOT NULL CHECK (slot_time BETWEEN 12 AND 17),
   experience  BOOLEAN     NOT NULL DEFAULT false,
   created_at  TIMESTAMPTZ DEFAULT now()

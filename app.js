@@ -277,6 +277,7 @@
       const email = String(formData.get("email") || "").trim().toLowerCase();
       const slotTime = Number(formData.get("slot_time"));
       const experience = formData.get("experience") === "yes";
+      const xAccount = String(formData.get("x_account") || "").trim() || null;
 
       // クライアント側の事前チェック（満席確認）
       const liveSlot = await getSlotData(slotTime);
@@ -299,6 +300,7 @@
         email,
         slot_time: slotTime,
         experience,
+        x_account: xAccount,
       });
 
       if (error) {
@@ -324,6 +326,7 @@
         email,
         slot_time: slotTime,
         experience,
+        x_account: xAccount,
         created_at: new Date().toISOString(),
       });
       window.location.href = "../thanks/";
@@ -350,6 +353,7 @@
     setText("[data-email]", last.email);
     setText("[data-slot]", slotLabel(Number(last.slot_time)));
     setText("[data-experience]", last.experience ? "体験希望あり" : "見学のみ");
+    setText("[data-x-account]", last.x_account || "—");
     setText(
       "[data-created-at]",
       new Date(last.created_at).toLocaleString("ja-JP", {
@@ -369,6 +373,7 @@
       "id",
       "name",
       "email",
+      "x_account",
       "slot_time",
       "experience",
       "created_at",
@@ -378,6 +383,7 @@
         item.id,
         item.name,
         item.email,
+        item.x_account ?? "",
         item.slot_time,
         item.experience ? "yes" : "no",
         item.created_at,
@@ -417,6 +423,7 @@
       [
         item.name,
         item.email,
+        item.x_account ?? "—",
         slotLabel(Number(item.slot_time)),
         item.experience ? "あり" : "なし",
         new Date(item.created_at).toLocaleString("ja-JP"),
@@ -506,7 +513,7 @@
 
     if (format === "csv") {
       const csv = toCsv(reservations);
-      output.textContent = csv || "id,name,email,slot_time,experience,created_at";
+      output.textContent = csv || "id,name,email,x_account,slot_time,experience,created_at";
       page.querySelector("[data-download]").addEventListener("click", () => {
         triggerDownload(`${baseName}.csv`, csv, "text/csv;charset=utf-8");
       });
