@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <script src="../app.js" defer></script>
   </head>
   <body>
@@ -57,7 +58,7 @@
               <div class="field">
                 <label for="email">メールアドレス</label>
                 <input id="email" name="email" type="email" required />
-                <small>予約確認用です。ローカル実装のため、この端末にのみ保存されます。</small>
+                <small>予約確認用です。送信後に確認のため利用します。</small>
               </div>
 
               <div class="field">
@@ -109,7 +110,7 @@
                 <p class="eyebrow">Live Slots</p>
                 <h2 class="section-title display-title">現在の空き枠</h2>
               </div>
-              <p>この端末内の予約データをもとに自動更新されます。</p>
+              <p>Supabase からリアルタイムで取得した残数です。</p>
             </div>
             <div class="slot-grid" data-slot-list></div>
           </div>
@@ -120,7 +121,7 @@
     <footer class="site-footer">
       <div class="page-shell">
         <div class="footer-panel">
-          <span>本実装では予約データはブラウザの `localStorage` に保存されます。</span>
+          <span>予約データは Supabase に保存されます。</span>
           <span><a href="../api/reserve/">API仕様メモ</a></span>
         </div>
       </div>
