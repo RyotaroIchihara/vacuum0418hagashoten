@@ -4,7 +4,7 @@
   const SUPABASE_ANON_KEY =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNldGNya3B2YWFqaGxjcXpzZGxjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1MTg5NjIsImV4cCI6MjA4ODA5NDk2Mn0.409gPMwaibFureIG1JCYppL5e_h4m--0boOIeaB5MZU";
   const LAST_KEY = "vacuumEventLastReservation_v1";
-  const SLOT_TIMES = [12, 13, 14, 15, 16, 17];
+  const SLOT_TIMES = [11, 12, 14, 15, 16, 17];
   const SLOT_CAPACITY = 3;
 
   const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -29,7 +29,9 @@
   // ---- ユーティリティ ----
 
   function slotLabel(hour) {
-    return `${String(hour).padStart(2, "0")}:00`;
+    const h = String(hour).padStart(2, "0");
+    const endMin = 50;
+    return `${h}:00〜${h}:${endMin}`;
   }
 
   function setText(selector, value) {
